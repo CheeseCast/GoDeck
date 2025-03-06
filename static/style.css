@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #2c2c2c;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.mixer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#faders-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.fader-container {
+    background: #3c3c3c;
+    border-radius: 10px;
+    padding: 15px;
+    width: 80px;  /* Reduced from 100px */
+    height: 300px;  /* Reduced from 400px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;  /* Added for proper positioning */
+}
+
+.fader {
+    width: 200px;  /* Reduced from 400px */
+    height: 20px;  /* Reduced from 100px */
+    position: absolute;  /* Changed to absolute positioning */
+    top: 50%;
+    left: 50%;
+    transform: rotate(-90deg) translate(-50%, -50%);
+    transform-origin: left top;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #555;
+    border-radius: 10px;
+}
+
+.fader::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;  /* Reduced from 30px */
+    height: 30px;  /* Reduced from 40px */
+    background: #00ff00;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.fader::-moz-range-thumb {
+    width: 20px;  /* Reduced from 30px */
+    height: 30px;  /* Reduced from 40px */
+    background: #00ff00;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    border: none;
+}
+
+.app-name {
+    font-size: 0.9em;
+    text-align: center;
+    position: absolute;  /* Changed to absolute */
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    word-wrap: break-word;
+}
+
+.volume-display {
+    font-size: 0.9em;
+    color: #00ff00;
+    position: absolute;  /* Changed to absolute */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mute-button {
+    background: #555;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;  /* Changed to absolute */
+    bottom: 45px;  /* Adjusted position */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background 0.3s;
+    width: 80%;
+}
+
+.mute-button.muted {
+    background: #ff0000;
+}
+
+.mute-button:hover {
+    background: #666;
+}
